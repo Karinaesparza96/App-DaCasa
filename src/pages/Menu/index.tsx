@@ -1,12 +1,9 @@
 import Buscador from './Buscador';
 import Filtros from './Filtros';
 import styles from './Menu.module.scss';
-import {ReactComponent as Logo} from 'assets/logo.svg';
 import { useState } from 'react';
 import Ordenador, {OpcoesOrdenador} from './Ordenador';
 import Lista from './Lista';
-
-
 
 const Menu = () => {
     const [busca, setBusca] = useState('');
@@ -15,9 +12,6 @@ const Menu = () => {
 
     return ( 
         <main>
-            <nav className={styles.menu}>
-                <Logo />
-            </nav>
             <header className={styles.header}>
                 <div className={styles.header__text}>
                     A casa da massa
@@ -34,7 +28,7 @@ const Menu = () => {
             </section>
            
         </main>
-     );
-}
+    );
+};
  
 export default Menu;

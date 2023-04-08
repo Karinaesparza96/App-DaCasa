@@ -4,7 +4,7 @@ import options from './options.json';
 import { useState } from 'react';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
 
-export type OpcoesOrdenador = '' | 'porcao' | 'qtd_pessoas' | 'preco'; 
+export type OpcoesOrdenador = '' | 'porcao' | 'qtd_pessoas' | 'preco';
 
 interface IProps {
     ordenaPor: OpcoesOrdenador,
@@ -13,14 +13,13 @@ interface IProps {
 
 const Ordenador = ({ ordenaPor, setOrdenaPor }: IProps) => {
     const [open, setOpen] = useState(false);
-    const nomeOrdenador = ordenaPor && options.find((opc) => opc.value === ordenaPor)?.nome
-    
-    return (
+    const nomeOrdenador = ordenaPor && options.find((opc) => opc.value === ordenaPor)?.nome;
 
-        <button
+    return (
+        <button 
             className={classNames({
                 [styles.ordenador]: true,
-                [styles["ordenador--ativo"]]: ordenaPor !== ''
+                [styles['ordenador--ativo']]: ordenaPor !== ''
             })}
             onClick={() => setOpen(!open)}
             onBlur={() => setOpen(false)}
@@ -43,6 +42,6 @@ const Ordenador = ({ ordenaPor, setOrdenaPor }: IProps) => {
             </div>
         </button>
     );
-}
+};
 
 export default Ordenador;

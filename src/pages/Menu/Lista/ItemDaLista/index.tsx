@@ -1,11 +1,9 @@
 import styles from './ItemDaLista.module.scss';
-import menu from '../menu.json'
 import classNames from 'classnames';
+import { IMenu } from 'pages/Menu/interfaces/IMenu';
 
-type Props = typeof menu[0]
-
-const ItemDaLista = (item: Props) => {
-    const { id, title, description, category, size, serving, price, photo} = item
+const ItemDaLista = (item: IMenu) => {
+    const { id, title, description, category, size, serving, price, photo} = item;
     return ( 
         <div className={styles.item} key={id}>
             <div className={styles.item__imagem}>
@@ -35,7 +33,7 @@ const ItemDaLista = (item: Props) => {
                 </div>
             </div>
         </div>
-     );
-}
+    );
+};
  
 export default ItemDaLista;

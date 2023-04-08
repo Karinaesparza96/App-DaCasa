@@ -17,9 +17,9 @@ const Filtros = ({ filtro, setFiltro }: Props) => {
 
     function selecionarFiltro(option: IOption){
         if(filtro === option.id){
-            return setFiltro(null)
+            return setFiltro(null);
         }
-        return setFiltro(option.id)
+        return setFiltro(option.id);
     }
     return (
         <div className={styles.filtros}>{filtros.map((option) => (
@@ -34,6 +34,6 @@ const Filtros = ({ filtro, setFiltro }: Props) => {
             </button>
         ))}</div>
     );
-}
+};
 
 export default Filtros;
