@@ -3,18 +3,30 @@
 .titulo {
     color: $dark;
     font-size: 3rem;
-    margin-bottom: 30px;
+    margin: 30px 0 30px;
+    text-align: center;
 }
 
 .recomendados {
     border-radius: 2px;
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     gap: 30px;
     justify-content: space-between;
+    
 }
 
 .recomendado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+   
+    
+    &__descricao{
+        width: 50%;
+        margin: auto 0;
+    }
     &__imagem {
         width: 300px;
         margin-bottom: 10px;
@@ -35,7 +47,8 @@
         font-weight: bold;
         padding: 10px 0;
         transition: .2s ease;
-        width: 100%;
+        width: 50%;
+        margin-top: 5px;
 
         &:hover {
             background-color: $red-dark;

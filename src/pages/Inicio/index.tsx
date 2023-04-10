@@ -16,6 +16,7 @@ const Inicio = () => {
                         <div className={styles.recomendado__imagem}>
                             <img src={item.photo} alt={item.title}/>
                         </div>
+                        <p className={styles.recomendado__descricao}>{item.description}</p>
                         <button className={styles.recomendado__botao}>
                             Ver mais
                         </button>

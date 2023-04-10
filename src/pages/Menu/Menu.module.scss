@@ -1,40 +1,10 @@
 @import '/src/styles/variaveis';
 @import '/src/styles/breakpoints';
 
-.header {
-    width: 100%;
-    height: 300px;
-    background-image: url('/assets/cardapio/header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 0 $padding-horizontal;
 
-    @media (max-width: $desktop_xsm) {
-        padding: 0px $padding-horizontal-mobile;
-    }
-
-    @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-        padding: 0px $padding-horizontal-sm;
-    }
-
-    @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-        padding: 0px $padding-horizontal-md;
-    }
-
-    &__text {
-        color: #f6f6f6;
-        font-size: 5rem;
-        min-width: 400px;
-        width: 40%;
-    } 
-}
 
 .cardapio {
-    position: sticky;
-    top: 0;
+   
     padding: 50px $padding-horizontal;
 
     @media (max-width: $desktop_xsm) {
@@ -53,6 +23,8 @@
         color: $dark;
         font-size: 3rem;
         margin-bottom: 30px;
+       
+        
     }
     &__filtros {
         display: flex;
