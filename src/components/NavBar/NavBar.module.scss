@@ -3,7 +3,10 @@
 
 .container{
     height: 100px;
+    
     .menu {
+    
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;  
         width: 100%;
         background-color: $light-grey;
         position: fixed;
@@ -37,8 +40,13 @@
             list-style-type: none;
             padding: 0 20px;  
         }
-             
+
+        &__active {
+            border-bottom: solid 2px $blue;
+        }
+            
         a {
+            
             color: $dark;
             cursor: pointer;
             font-size: 24px;
@@ -50,11 +58,11 @@
                 color: $dark-grey;
             }
 
-            &--active {
-                background-color: $blue;
-                color: white;
-            }
-    
+                        
+
         }
+
+                 
+        
     }
 }

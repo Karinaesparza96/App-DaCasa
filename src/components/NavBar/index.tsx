@@ -1,7 +1,6 @@
 import styles from './NavBar.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
-import classNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const rotas = [{
@@ -25,9 +24,11 @@ const NavBar = () => {
                 <ul className={styles.menu__list}>
                     {rotas.map((rota, i) => (
                         <li key={i} className={styles.menu__link}>
-                            <Link to={rota.to} className={styles.menu__list}>
+                            <NavLink to={rota.to} className={({ isActive }) =>
+                                isActive ? `${styles.menu__active}` : ''
+                            }>
                                 {rota.label}
-                            </Link>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
