@@ -33,6 +33,8 @@
 }
 
 .cardapio {
+    position: sticky;
+    top: 0;
     padding: 50px $padding-horizontal;
 
     @media (max-width: $desktop_xsm) {

@@ -18,18 +18,21 @@ const NavBar = () => {
     }
     ];
     return (
-        <nav className={styles.menu} id='sidebar'>
-            <Logo />
-            <ul className={styles.menu__list}>
-                {rotas.map((rota, i) => (
-                    <li key={i} className={styles.menu__link}>
-                        <Link to={rota.to}>
-                            {rota.label}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <div className={styles.container}>
+
+            <nav className={styles.menu} id='sidebar'>
+                <Logo />
+                <ul className={styles.menu__list}>
+                    {rotas.map((rota, i) => (
+                        <li key={i} className={styles.menu__link}>
+                            <Link to={rota.to} className={styles.menu__list}>
+                                {rota.label}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
     );
 };
 
