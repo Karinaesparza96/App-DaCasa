@@ -9,15 +9,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const AppRouter = () => {
     return (
-        <main>
+        <main className='container'>
             <Router>
                 <NavBar />
                 <Routes>
-                    <Route path='/' element={<Header />} errorElement={<NotFound/>}>
+                    <Route path='/' element={<Header />}>
                         <Route index element={<Inicio />} />
                         <Route path='menu' element={<Menu />} />
                         <Route path='sobre' element={<Sobre/>}/>
                     </Route>
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
                 <Footer />
             </Router>
