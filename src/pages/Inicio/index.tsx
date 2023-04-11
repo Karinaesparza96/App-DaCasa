@@ -1,11 +1,32 @@
 import menu from 'data/menu.json';
 import styles from './Inicio.module.scss';
 import imagem from 'assets/nossa_casa.png';
+import {useNavigate, useLocation} from 'react-router-dom';
 
+export interface IPrato {
+    title: string;
+    description: string;
+    photo: string;
+    size: number;
+    serving: number;
+    price: number;
+    id: number;
+    category: {
+        id: number;
+        label: string;
+    };
+}
 
 const Inicio = () => {
     let pratosRecomendados = [...menu];
     pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).slice(0,3);
+
+    const navigate = useNavigate();
+
+    const verMaisDetalhesPrato = (prato: IPrato) => {
+        console.log(prato);
+        navigate(`/prato/${prato.id}`, {state: {prato}});
+    };
 
     return ( 
         <section>
@@ -17,7 +38,10 @@ const Inicio = () => {
                             <img src={item.photo} alt={item.title}/>
                         </div>
                         <p className={styles.recomendado__descricao}>{item.description}</p>
-                        <button className={styles.recomendado__botao}>
+                        <button 
+                            className={styles.recomendado__botao}
+                            onClick={() => verMaisDetalhesPrato(item)}
+                        >
                             Ver mais
                         </button>
                     </div>
