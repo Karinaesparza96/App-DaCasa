@@ -12,7 +12,7 @@ const Menu = () => {
 
     return (
         <section className={styles.cardapio}>
-            <h3 className={styles.cardapio__titulo}>Cardápio</h3>
+            <h3 className={styles.cardapio__titulo}>Menu</h3>
             <Buscador busca={busca} setBusca={setBusca} />
             <div className={styles.cardapio__filtros}>
                 <Filtros filtro={filtro} setFiltro={setFiltro} />
