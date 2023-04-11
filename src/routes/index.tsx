@@ -9,10 +9,11 @@ const AppRouter = () => {
         <main>
             <Router>
                 <NavBar />
-                <Header />
                 <Routes>
-                    <Route path='/' element={<Inicio />} />
-                    <Route path='/menu' element={<Menu />} />
+                    <Route path='/' element={<Header />}>
+                        <Route index element={<Inicio />} />
+                        <Route path='menu' element={<Menu />} />
+                    </Route>
                 </Routes>
             </Router>
         </main>
