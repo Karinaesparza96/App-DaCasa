@@ -1,6 +1,7 @@
 import filtros from './filtros.json';
 import styles from  './Filtros.module.scss';
 import classNames from 'classnames';
+import {useCallback} from 'react';
 
 type IOption = typeof filtros[0]
 // Ou 
@@ -15,12 +16,12 @@ interface Props {
 
 const Filtros = ({ filtro, setFiltro }: Props) => {
 
-    function selecionarFiltro(option: IOption){
+    const selecionarFiltro = useCallback((option: IOption) =>{
         if(filtro === option.id){
             return setFiltro(null);
         }
         return setFiltro(option.id);
-    }
+    }, [filtro]);
     return (
         <div className={styles.filtros}>{filtros.map((option) => (
             <button
