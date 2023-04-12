@@ -23,7 +23,7 @@
 }
 
 .imagem {
-    width: 600px; 
+    width: 600px;
     img {
         border-radius: 8px;
         width: 100%;
@@ -39,6 +39,8 @@
         color: $darkest-grey;
         font-size: 1.5rem;
         font-weight: bold;
+        width: 600px;
+        text-align: center;
     }
 
     &____detalhes {

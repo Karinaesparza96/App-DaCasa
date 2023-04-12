@@ -1,16 +1,25 @@
 import classNames from 'classnames';
 import styles from './Detalhes.module.scss';
-import { useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useScrollTop from 'common';
+import menu from 'data/menu.json';
+import NotFound from 'pages/NotFound';
 
 const DetalhesPrato = () => {
     useScrollTop();
-    const { state } = useLocation(); // recuperando state passado como parametro no navigate
-    const { prato } = state;
+    // const { state } = useLocation(); // recuperando state passado como parametro no navigate
+    // const { prato } = state;
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const prato = menu.find(item => item.id === Number(id));
+   
+    if (!prato) {
+        return <NotFound />;
+    }
 
     return (
         <>
-            <button className={styles.voltar}>
+            <button className={styles.voltar} onClick={() => navigate(-1)}>
                 {'< Voltar'}
             </button>
             <section className={styles.container}>
