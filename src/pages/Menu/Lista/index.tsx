@@ -15,7 +15,6 @@ interface IProps {
 const Lista = (props: IProps) => {
     const [lista, setLista] = useState(menuList);
     const { busca, filtro, ordenaPor } = props;
-
     const testaBusca = useCallback((title: string) => {
         const regex = new RegExp(busca, 'i');
         const searchExp = regex.test(title);

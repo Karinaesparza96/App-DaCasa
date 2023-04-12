@@ -1,16 +1,18 @@
+import { ReactNode } from 'react';
 import styles from './Header.module.scss';
-import {Outlet} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ children }: { children?: ReactNode }) => {
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.header__text}>
-                    A casa da massa
+                A casa da massa
                 </div>
             </header>
             <div>
-                <Outlet/>
+                <Outlet />
+                {children}
             </div>
         </>
     );

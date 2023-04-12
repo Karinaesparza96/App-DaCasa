@@ -17,10 +17,10 @@ const AppRouter = () => {
                     <Route path='/' element={<Header />}>
                         <Route index element={<Inicio />} />
                         <Route path='menu' element={<Menu />} />
-                        <Route path='sobre' element={<Sobre/>}/>
+                        <Route path='sobre' element={<Sobre />} />
                     </Route>
+                    <Route path='prato/:id' element={<Detalhes />} />
                     <Route path='*' element={<NotFound />} />
-                    <Route path='prato/:id' element={<Detalhes/>}/>
                 </Routes>
                 <Footer />
             </Router>

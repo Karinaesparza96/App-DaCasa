@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import styles from './Detalhes.module.scss';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import useScrollTop from 'common';
 import menu from 'data/menu.json';
 import NotFound from 'pages/NotFound';
+import Header from 'components/Header';
 
 const DetalhesPrato = () => {
     useScrollTop();
@@ -12,13 +13,11 @@ const DetalhesPrato = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const prato = menu.find(item => item.id === Number(id));
-   
     if (!prato) {
         return <NotFound />;
     }
-
     return (
-        <>
+        <Header>
             <button className={styles.voltar} onClick={() => navigate(-1)}>
                 {'< Voltar'}
             </button>
@@ -52,7 +51,7 @@ const DetalhesPrato = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </Header>
     );
 };
 

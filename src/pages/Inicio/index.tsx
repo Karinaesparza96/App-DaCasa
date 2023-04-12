@@ -22,11 +22,9 @@ const Inicio = () => {
     useScrollTop();
     let pratosRecomendados = [...menu];
     pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).slice(0,3);
-
     const navigate = useNavigate();
-
     const verMaisDetalhesPrato = (prato: IPrato) => {
-        navigate(`/prato/${prato.id}`, {state: {prato}});
+        navigate(`/prato/${prato.id}`);
     };
 
     return ( 
