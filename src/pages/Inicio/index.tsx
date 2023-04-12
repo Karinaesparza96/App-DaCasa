@@ -1,7 +1,8 @@
 import menu from 'data/menu.json';
 import styles from './Inicio.module.scss';
 import imagem from 'assets/nossa_casa.png';
-import {useNavigate, useLocation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import useScrollTop from 'common';
 
 export interface IPrato {
     title: string;
@@ -18,13 +19,13 @@ export interface IPrato {
 }
 
 const Inicio = () => {
+    useScrollTop();
     let pratosRecomendados = [...menu];
     pratosRecomendados = pratosRecomendados.sort(() => 0.5 - Math.random()).slice(0,3);
 
     const navigate = useNavigate();
 
     const verMaisDetalhesPrato = (prato: IPrato) => {
-        console.log(prato);
         navigate(`/prato/${prato.id}`, {state: {prato}});
     };
 

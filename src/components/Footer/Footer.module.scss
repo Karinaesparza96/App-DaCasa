@@ -2,10 +2,14 @@
 @import '../../styles/variaveis';
 
 .footer {
+    width: 100%;
     background-color: $red;
     display: flex;
     justify-content: flex-end;
     padding: 10px $padding-horizontal;
+    position: fixed;
+    bottom: 0;
+    
 
     @media (max-width: $desktop_xsm) {
         padding: 10px $padding-horizontal-mobile;

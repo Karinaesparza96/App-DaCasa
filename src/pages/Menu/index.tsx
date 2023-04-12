@@ -4,8 +4,10 @@ import styles from './Menu.module.scss';
 import { useState } from 'react';
 import Ordenador, { OpcoesOrdenador } from './Ordenador';
 import Lista from './Lista';
+import useScrollTop from 'common';
 
 const Menu = () => {
+    useScrollTop();
     const [busca, setBusca] = useState('');
     const [filtro, setFiltro] = useState<number | null>(null);
     const [ordenaPor, setOrdenaPor] = useState<OpcoesOrdenador>('');

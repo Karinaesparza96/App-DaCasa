@@ -1,14 +1,16 @@
 import classNames from 'classnames';
 import styles from './Detalhes.module.scss';
 import { useLocation } from 'react-router-dom';
+import useScrollTop from 'common';
 
 const DetalhesPrato = () => {
+    useScrollTop();
     const { state } = useLocation(); // recuperando state passado como parametro no navigate
     const { prato } = state;
 
     return (
         <>
-            <button>
+            <button className={styles.voltar}>
                 {'< Voltar'}
             </button>
             <section className={styles.container}>
@@ -34,6 +36,9 @@ const DetalhesPrato = () => {
                         </div>
                         <div className={styles.tags__qtdpessoas}>
                             Serve {prato.serving} pessoa{prato.serving > 1 ? 's' : ''}
+                        </div>
+                        <div className={styles.tags__valor}>
+                            R${prato.price.toFixed(2)}
                         </div>
                     </div>
                 </div>

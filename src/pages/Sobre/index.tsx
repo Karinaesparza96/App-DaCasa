@@ -2,10 +2,12 @@ import styles from './Sobre.module.scss';
 import imgSobreCasa from 'assets/sobre/casa.png';
 import imgSobreMassa1 from 'assets/sobre/massa1.png';
 import imgSobreMassa2 from 'assets/sobre/massa2.png';
+import useScrollTop from 'common';
 
 const imagens = [imgSobreMassa1, imgSobreMassa2];
 
 const Sobre = () => {
+    useScrollTop();
     return (
         <section>
             <h3 className={styles.sobreNos__titulo}>Sobre</h3>
